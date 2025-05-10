@@ -2,13 +2,14 @@ from pathlib import Path
 from typing import Union
 
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+
+from spa import SinglePageApplication
 
 app = FastAPI()
 api = FastAPI()
 app.mount("/api/v1", api)
-app.mount("/", StaticFiles(directory=Path("www"), html=True))
+app.mount("/", SinglePageApplication(directory=Path("www")), name="Angular")
 
 
 class Item(BaseModel):
