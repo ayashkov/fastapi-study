@@ -3,5 +3,27 @@ name = "python-study"
 version = "1.0.0-dev.0"
 description = "A study of Python, uv, FastAPI"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+authors = [
+    { name = "Alexei Yashkov", email = "alexei.yashkov@yashkov.org" }
+]
 requires-python = ">=3.12"
-dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+]
+
+[dependency-groups]
+dev = [
+    "coverage >=7.8.0",
+    "pyclean >=3.1.0",
+    "pytest >=8.3.5"
+]
+
+[build-system]
+requires = ["hatchling >=1.27.0"]
+build-backend = "hatchling.build"
