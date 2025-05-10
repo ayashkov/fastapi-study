@@ -1,0 +1,7 @@
+[project]
+name = "python-study"
+version = "1.0.0-dev.0"
+description = "A study of Python, uv, FastAPI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

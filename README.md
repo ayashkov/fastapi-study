@@ -1,2 +1,3 @@
-# python-study
-A study of Python, uv, FastAPI
+# Python Study
+
+A study of Python, uv, and FastAPI.
