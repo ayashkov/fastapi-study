@@ -4,7 +4,7 @@ version = "1.0.0-dev.0"
 description = "A study of Python, uv, FastAPI, Angular"
 readme = "README.md"
 license = "MIT"
-license-files = ["LICEN[CS]E*"]
+license-files = ["LICENSE"]
 authors = [
     { name = "Alexei Yashkov", email = "alexei.yashkov@yashkov.org" }
 ]
@@ -14,7 +14,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "fastapi[standard]>=0.115.12",
+    "fastapi[standard] >=0.115.12",
 ]
 
 [dependency-groups]

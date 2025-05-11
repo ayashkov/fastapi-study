@@ -2,6 +2,7 @@ import subprocess
 from typing import Any, Sequence
 
 from hatchling.builders.hooks.plugin.interface import BuildHookInterface
+from packaging.version import Version
 
 
 class CustomBuildHook(BuildHookInterface):
@@ -9,6 +10,8 @@ class CustomBuildHook(BuildHookInterface):
         if self.target_name != 'wheel':
             return
 
+        self.run(["npm", "version", self.version, "--no-git-tag-version",
+            "--allow-same-version"])
         self.run(["npm", "ci"])
         self.run(["npm", "run", "build"])
 
@@ -17,3 +20,10 @@ class CustomBuildHook(BuildHookInterface):
 
         if process.returncode:
             raise Exception("Error running SPA build")
+
+    @property
+    def version(self) -> str:
+        version = Version(self.metadata.version)
+        suffix = f"-dev.{version.dev}" if version.dev is not None else ""
+
+        return f"{version.major}.{version.minor}.{version.micro}{suffix}"
