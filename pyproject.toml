@@ -20,6 +20,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "coverage >=7.8.0",
+    "hatchling >=1.27.0",
     "pyclean >=3.1.0",
     "pytest >=8.3.5"
 ]
@@ -30,6 +31,10 @@ fastapi-study = "fastapi_study.app:main"
 [build-system]
 requires = ["hatchling >=1.27.0"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.custom]
+path = "build.py"
+src = "fastapi_study/ui"
 
 [tool.hatch.build.targets.wheel]
 exclude = [
