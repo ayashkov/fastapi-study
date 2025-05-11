@@ -1,5 +1,5 @@
 [project]
-name = "python-study"
+name = "fastapi-study"
 version = "1.0.0-dev.0"
 description = "A study of Python, uv, FastAPI"
 readme = "README.md"
