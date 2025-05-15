@@ -26,7 +26,7 @@ dev = [
 ]
 
 [project.scripts]
-fastapi-study = "fastapi_study.app:main"
+fastapi-study = "fastapi_study:main"
 
 [build-system]
 requires = ["hatchling >=1.27.0"]
@@ -34,12 +34,12 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.hooks.custom]
 path = "build.py"
-src = "fastapi_study/ui"
+src = "src/fastapi_study/ui"
 
 [tool.hatch.build.targets.wheel]
 exclude = [
-    "fastapi_study/ui/.*",
-    "fastapi_study/ui/public",
-    "fastapi_study/ui/src",
-    "fastapi_study/ui/*.json"
+    "src/fastapi_study/ui/.*",
+    "src/fastapi_study/ui/public",
+    "src/fastapi_study/ui/src",
+    "src/fastapi_study/ui/*.json"
 ]
